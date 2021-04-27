@@ -6,7 +6,7 @@
 /*   By: piguerry <piguerry@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 16:23:43 by piguerry          #+#    #+#             */
-/*   Updated: 2021/04/27 12:25:45 by piguerry         ###   ########.fr       */
+/*   Updated: 2021/04/27 14:59:53 by piguerry         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ static char	*parser_p_digitd(t_fl f, char *str)
 	char	*join;
 
 	count = 0;
-	space = NULL;
 	join = NULL;
 	len = ft_strlen(str);
+	if (len >= f.digitd)
+		return (str);
 	if (!(space = malloc(sizeof(char) * (f.digitd - len + 1))))
 		return (0);
 	while (count < f.digitd - len)
